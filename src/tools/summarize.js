@@ -1,6 +1,6 @@
 import {
-	ViewListIcon,
-} from '@heroicons/react/solid'
+	QueueListIcon,
+} from '@heroicons/react/24/solid'
 
 
 const obj = {
@@ -8,10 +8,10 @@ const obj = {
 	title: "Summarize Points",
 	desc: "Analyze your text or documents and convey the important concepts in bullet form.",
 	category: "Personal",
-	Icon: ViewListIcon,
+	Icon: QueueListIcon,
 	// tags: [],
 	permissions: ['user'],
-	
+
 	fromColor: "green-500",
 	toColor: "blue-500",
 
@@ -29,11 +29,11 @@ const obj = {
 		title:"Entry Text",
 		desc: "A sentence or paragraph you wish to understand in bullet point form.",
 		// n: 1,
-		prompts: [{ 
-				title: "Content", 
-				attr: "content",  
-				value: "", 
-				placeholder: "When doing an your taxes, it's important to...", 
+		prompts: [{
+				title: "Content",
+				attr: "content",
+				value: "",
+				placeholder: "When doing an your taxes, it's important to...",
 				label: "",
 				type: "textarea",
 				maxLength: 600,
@@ -55,7 +55,7 @@ const obj = {
 			color: "blue",
 		}
 	}]
-		
+
 }
 
 export default obj

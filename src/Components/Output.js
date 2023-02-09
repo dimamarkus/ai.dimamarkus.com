@@ -1,9 +1,9 @@
 import Loader from './Loader'
 import Typist from 'react-typist';
 import {  CheckIcon,
-} from '@heroicons/react/solid'
-import {   DuplicateIcon, ExclamationCircleIcon
-} from '@heroicons/react/outline'
+} from '@heroicons/react/24/solid'
+import {   DocumentDuplicateIcon, ExclamationCircleIcon
+} from '@heroicons/react/24/outline'
 import styled from 'styled-components'
 import { observer, inject } from 'mobx-react'
 
@@ -32,11 +32,11 @@ export const Output = inject('store')(observer(({ store,title, desc, Icon, outpu
 					{desc}
 					</p>
 				</div>
-		
+
 		</div>
 		{code ? null : output ? <div
 			className="whitespace-pre-wrap min-w-full text-gray-800 h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-				{output ? 
+				{output ?
 					<Typist
 						stdTypingDelay={0}
 						avgTypingDelay={7}
@@ -49,15 +49,15 @@ export const Output = inject('store')(observer(({ store,title, desc, Icon, outpu
 						}}
 						>
 							{output}
-						</Typist> 
+						</Typist>
 					: null}
-				
-			
+
+
 			</div> : null}
 
 			{(output && outputs && outputs.length) ? <div className="divide-y divide-dashed divide-gray-300"> <div></div>
 <div></div></div> : null}
-			
+
 			{(outputs && outputs.length) ?
 				<Outputs outputs={outputs} outputsColor={outputsColor} OutputsIcon={OutputsIcon} /> : null}
 
@@ -72,10 +72,10 @@ export const Output = inject('store')(observer(({ store,title, desc, Icon, outpu
 					value={code}
 					/> : null}
 			<QuickTools outputs={outputs} output={output} code={code} />
-		
+
 		</div>
 	</div>
-	
+
 </div>)
 }))
 
@@ -85,11 +85,11 @@ export const QuickTools = inject('store')(observer(({ store, output, outputs, co
 	return (
 		<>
 {(output || code || (outputs && outputs.length)) ? <div className="flex">
-			
+
 			<Shortcut className="p-1 rounded-lg cursor-pointer hover:bg-green-200 hover:text-green-700 relative group flex flex-col items-center group text-gray-300"
 			onClick={()=>store.copyToClipboard(output || code || outputs)}
 			>
-				<DuplicateIcon className="w-5 h-5" />
+				<DocumentDuplicateIcon className="w-5 h-5" />
 				<Tooltip className="absolute bottom-2 flex flex-col items-center mb-6 group-hover:flex">
 					<span className="relative z-10 p-3 text-sm leading-none text-gray-800 bg-white bg-opacity-25 shadow-lg text-center backdrop-filter backdrop-blur rounded-md">Copy text to clipboard</span>
 				</Tooltip>
@@ -120,7 +120,7 @@ const Shortcut = styled.div`
 
 
 function Outputs({ outputs, outputsColor, OutputsIcon }){
-	
+
 	return(
 	<div className="whitespace-pre-wrap min-w-full py-4 text-gray-800 h-auto text-lg divide-y">
 		<Typist
@@ -135,19 +135,19 @@ function Outputs({ outputs, outputsColor, OutputsIcon }){
 			hideWhenDoneDelay: 250,
 		}}
 		>
-		
-			{outputs.map((output, index) => 
+
+			{outputs.map((output, index) =>
 				<div className="py-2 flex items-start" key={index}>
 				<div className={`mr-4 flex-shrink-0 inline-flex items-center justify-center text-sm h-6 w-6 rounded-full bg-${outputsColor ? outputsColor : "green"}-200 text-${outputsColor ? outputsColor : "green"}-600`}>
-					{OutputsIcon === false ? 
-						`${(index+1)}` : 
+					{OutputsIcon === false ?
+						`${(index+1)}` :
 						OutputsIcon ? <OutputsIcon className={`h-4 w-4 text-${outputsColor ? outputsColor : "green"}-600`} aria-hidden="true" /> :
 							<CheckIcon className={`h-4 w-4 text-${outputsColor ? outputsColor : "green"}-600`} aria-hidden="true" />}
 				</div>
 				{output}
 			</div>)}
-			
-		</Typist> 
+
+		</Typist>
 
 	</div>
 	)

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     PencilIcon,
     ClockIcon,
-  } from '@heroicons/react/outline'
+  } from '@heroicons/react/24/outline'
 
 import  { Grid, Col } from '../Components/Body'
 import EntryText  from '../Components/EntryText'
@@ -46,9 +46,9 @@ class Referral extends Component {
 	@observable prompts = []
 
 	@observable feedbacks = []
-    
+
     @observable tool = {}
-    
+
     constructor(props) {
         super(props)
         makeObservable(this)
@@ -63,7 +63,7 @@ class Referral extends Component {
 		let response = await this.props.store.api.post('/user/feedback/view')
 		this.feedbacks = [...response.data]
 	}
-	
+
 	handleFeedback = async () => {
 		try {
 			await this.props.store.api.post('/user/feedback', {  feedback: this.props.store.feedback, })
@@ -87,7 +87,7 @@ class Referral extends Component {
 	onChange = e => {
 		this.props.store.feedback = e.target.value
 	}
-	
+
 	render() {
 		return (
 				<>
@@ -99,32 +99,32 @@ class Referral extends Component {
 								prompt={this.props.store.feedback}
 								onChange={this.onChange}
 							/>
-							<Countdown 
-								ref={countdown => this.countdown = countdown} 
-								date={this.date} 
-								renderer={props => 
-									<Button 
+							<Countdown
+								ref={countdown => this.countdown = countdown}
+								date={this.date}
+								renderer={props =>
+									<Button
 										title={props.total ? `Timeout ${props.total/1000} secs` : "Submit Feedback"}
 										disabled={props.total}
-										Icon={props.total ? ClockIcon : PencilIcon} 
-										onClick={this.onClick} 
-									/>} 
+										Icon={props.total ? ClockIcon : PencilIcon}
+										onClick={this.onClick}
+									/>}
 							/>
 						</Col>
 						<Col span="6">
-							<Output 
+							<Output
                                     title={`EnhanceAI.ai`}
                                     desc={`Feedback Response`}
 
                                     Icon={Logo}
                                     fromColor={`yellow-300`}
 									toColor={`yellow-400`}
-                                    
+
                                     loading={this.loading}
                                     output={this.output}
-                                    
+
                             />
-							{this.feedbacks && this.feedbacks.map((feedback,index) => <Output 
+							{this.feedbacks && this.feedbacks.map((feedback,index) => <Output
 									key={feedback._id}
                                     title={`Feedback Received`}
                                     desc={`${feedback.created}`}
@@ -133,10 +133,10 @@ class Referral extends Component {
                                     fromColor={feedback.response ? `green-400` : `gray-300`}
 									toColor={feedback.response ? `green-600` : `gray-400`}
 
-									
+
                                     output={feedback.feedback}
                                     outputs={feedback.response ? [feedback.response] : null}
-                                    
+
                             />)}
 					</Col>
 				</Grid>
@@ -145,7 +145,7 @@ class Referral extends Component {
 	}
 }
 
-  
+
 
 
 export default Referral

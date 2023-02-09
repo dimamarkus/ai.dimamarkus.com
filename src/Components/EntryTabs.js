@@ -1,5 +1,5 @@
 import React from 'react'
-import { CheckIcon,  } from '@heroicons/react/outline'
+import { CheckIcon,  } from '@heroicons/react/24/outline'
 
 export const EntryPromptOptions = ({ prompts, currentPrompt, onChange }) => {
 	if(prompts.length === 1){

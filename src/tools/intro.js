@@ -1,6 +1,6 @@
 import {
-	MenuAlt2Icon,
-} from '@heroicons/react/solid'
+	Bars3Icon,
+} from '@heroicons/react/24/solid'
 
 
 const obj = {
@@ -8,10 +8,10 @@ const obj = {
 	title: "Introduction",
 	desc: "Create a useful introduction or opening sentence, or paragraph for your article",
 	category: "Content",
-	Icon: MenuAlt2Icon,
+	Icon: Bars3Icon,
 	// tags: [],
 	permissions: ['user'],
-	
+
 	fromColor: "yellow-400",
 	toColor: "yellow-600",
 
@@ -30,11 +30,11 @@ const obj = {
 		desc: "Write small sentence or paragraph you wish to review.",
 		// n: 1,
 		prompts: [
-			{ 
-				title: "Title", 
-				attr: "title",  
-				value: "", 
-				placeholder: "The Subject", 
+			{
+				title: "Title",
+				attr: "title",
+				value: "",
+				placeholder: "The Subject",
 				label: "The title you were planning to give the article.",
 				// type: "textarea",
 				maxLength: 150,
@@ -44,11 +44,11 @@ const obj = {
 				error: "",
 				example: "Getting Started With Storybook Without a JavaScript Framework",
 			},
-			{ 
-				title: "Audience", 
-				attr: "audience",  
-				value: "", 
-				placeholder: "Technology, development, etc", 
+			{
+				title: "Audience",
+				attr: "audience",
+				value: "",
+				placeholder: "Technology, development, etc",
 				label: "Who the main group are you are writing for",
 				// type: "textarea",
 				maxLength: 50,
@@ -58,11 +58,11 @@ const obj = {
 				error: "",
 				example: "Technology, development",
 			},
-			{ 
-				title: "Description", 
-				attr: "desc",  
-				value: "", 
-				placeholder: "An article about how to start coding...", 
+			{
+				title: "Description",
+				attr: "desc",
+				value: "",
+				placeholder: "An article about how to start coding...",
 				label: "A short description of what the article will be about",
 				type: "textarea",
 				maxLength: 600,
@@ -72,11 +72,11 @@ const obj = {
 				error: "",
 				example: "An article about why its important to use storybook to document your progress even when working without a javascript framework to help you understand what you are doing.",
 			},
-			{ 
-				title: "Keywords", 
-				attr: "keywords",  
-				value: "", 
-				placeholder: "Tech, code, etc...", 
+			{
+				title: "Keywords",
+				attr: "keywords",
+				value: "",
+				placeholder: "Tech, code, etc...",
 				label: "A summary of keywords that the article will consist of",
 				// type: "textarea",
 				maxLength: 100,
@@ -94,7 +94,7 @@ const obj = {
 			// color: "",
 		}
 	}]
-		
+
 }
 
 export default obj

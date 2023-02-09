@@ -3,8 +3,8 @@ import {
     PencilIcon,
     ClockIcon,
     InformationCircleIcon,
-    DuplicateIcon,
-  } from '@heroicons/react/outline'
+    DocumentDuplicateIcon,
+  } from '@heroicons/react/24/outline'
 
   import {Helmet} from "react-helmet";
 
@@ -36,7 +36,7 @@ class Tool extends Component {
 	@observable.deep prompts = []
 	@observable currentPrompt = 0
 	@observable currentOption = "Start Using"
-    
+
     @observable error = ""
 
     @observable output = ""
@@ -45,10 +45,10 @@ class Tool extends Component {
 
 
     @observable loading = false
-    
+
 	@observable date = Date.now() + 1000
     countdown = []
-    
+
     constructor(props) {
         super(props)
         makeObservable(this)
@@ -66,12 +66,12 @@ class Tool extends Component {
 
     @computed get isGenerateButtonDisabled(){
 
-        
+
 
         if(this.loading){
             return true
         }
-       
+
         return false
     }
 
@@ -81,27 +81,27 @@ class Tool extends Component {
             return true
         }
 
-        
+
         // this.prompts[this.currentPrompt].prompts[promptIndex].value
         return false
     }
 
     @computed get isMinLength() {
-		
+
 		if(!this.props.prompt.min){
 			return false
 		}
 		if(!this.props.prompt.type === "number"){
 			return false
 		}
-		
+
 		return false
 	}
 
     checkMinimumPrompts = () => {
 
         let shouldReturn = false
-       
+
         this.prompts[this.currentPrompt].prompts.forEach((prompt, promptIndex) => {
             if(prompt.min){
                 if(prompt.value.length < prompt.min){
@@ -140,7 +140,7 @@ class Tool extends Component {
         this.clearExampleTimeout.forEach((item,index) => {
             clearTimeout(this.clearExampleTimeout[index])
         })
-        
+
         this.prompts[this.currentPrompt].prompts.forEach((prompt, promptIndex) => {
             this.prompts[this.currentPrompt].prompts[promptIndex].value = ""
         })
@@ -155,9 +155,9 @@ class Tool extends Component {
         })
 
 
-      
+
         totalLength++
-        
+
         if(this.prompts[this.currentPrompt].example.output){
             this.clearExampleTimeout[totalLength] = setTimeout(()=> {
                 this.output =  this.prompts[this.currentPrompt].example.output
@@ -167,7 +167,7 @@ class Tool extends Component {
                     this.currentOption = "Start Using"
                     this.prompts[this.currentPrompt].prompts[0].value += " "
                 }, 7 * totalLength + this.prompts[this.currentPrompt].example.output.length * 7 + 500 )
-    
+
             }, (7 * totalLength) + 500)
         }
 
@@ -182,17 +182,17 @@ class Tool extends Component {
         if(this.prompts[this.currentPrompt].example.outputs){
             this.clearExampleTimeout[totalLength] = setTimeout(()=> {
                 this.outputs =  this.prompts[this.currentPrompt].example.outputs
-    
+
                 totalLength++
                 this.clearExampleTimeout[totalLength] = setTimeout(()=> {
                     this.loading = false
                     this.currentOption = "Start Using"
                     // this.prompts[this.currentPrompt].prompts[0].value += " "
                 }, 7 * totalLength + 500)
-    
+
             }, (7 * totalLength) + 500)
         }
-       
+
 
     }
 
@@ -205,7 +205,7 @@ class Tool extends Component {
             if(prompt.type === "number"){
                 return false;
             }
-           
+
             prompt.value = prompt.value.trim()
 
             if(filterBadWords.isProfane(prompt.value)){
@@ -261,7 +261,7 @@ class Tool extends Component {
             }
             // this.sanitizeAllPrompts()
 
-            let postObj = {} 
+            let postObj = {}
 
             this.prompts[this.currentPrompt].prompts.forEach((prompt) => {
                 postObj[prompt.attr] = prompt.value
@@ -291,7 +291,7 @@ class Tool extends Component {
             if(response.data.outputs){
                 this.outputs = response.data.outputs
             }
-            
+
             this.date = Date.now() + 10000
             this.countdown.forEach(countdown => {
                 if(countdown){
@@ -314,7 +314,7 @@ class Tool extends Component {
 
         render() {
 
-            // required for mobx to pick up deeply nested value 
+            // required for mobx to pick up deeply nested value
             const currentValue = this.prompts[this.currentPrompt].prompts[0].value
 
             return(
@@ -322,18 +322,18 @@ class Tool extends Component {
                 <Helmet>
                     <title>{`${this.tool.title} Tool - OpenAI Template`}</title>
                 </Helmet>
-                <Header 
+                <Header
                     title={this.tool.title}
                     desc={this.tool.desc}
                     Icon={this.tool.Icon}
 					fromColor={this.tool.fromColor}
 					category={this.tool.category}
-                    
+
                     options={[
-                        {   title: "Start Using", 
-                            Icon: PencilIcon, 
+                        {   title: "Start Using",
+                            Icon: PencilIcon,
                             color: this.props.store.profile.credits ? 'green' : 'red',
-                            onClick: this.onStartUsing 
+                            onClick: this.onStartUsing
                         },
                         { title: "Example", color: 'yellow', Icon: InformationCircleIcon, onClick: this.onExample},
                     ]}
@@ -349,15 +349,15 @@ class Tool extends Component {
                                     onChange={this.handleCurrentPrompt}
                                 />
 
-                                {this.prompts.map((prompt, index) => 
+                                {this.prompts.map((prompt, index) =>
                                     <EntryPrompt
-                                        prompt={prompt} 
-                                        key={index} 
+                                        prompt={prompt}
+                                        key={index}
                                         index={index}
                                         disabled={this.disabled}
                                         currentPrompt={this.currentPrompt}
                                     >
-                                        {prompt.prompts.map((promptInput, index) => 
+                                        {prompt.prompts.map((promptInput, index) =>
                                             <EntryInput
                                                 prompt={promptInput}
                                                 key={index}
@@ -368,26 +368,26 @@ class Tool extends Component {
 
 
                                     <div className="md:flex">
-                                        <Countdown 
-                                            ref={countdown => this.countdown[index] = countdown} 
-                                            date={this.date} 
-                                            renderer={props => 
-                                            <Button 
+                                        <Countdown
+                                            ref={countdown => this.countdown[index] = countdown}
+                                            date={this.date}
+                                            renderer={props =>
+                                            <Button
                                                 title={props.total ? `Timeout ${props.total/1000} secs` : "Perform Request"}
                                                 disabled={props.total || this.isGenerateButtonDisabled}
-                                                Icon={props.total ? ClockIcon : currentValue ? DuplicateIcon : PencilIcon} 
-                                                onClick={this.onGenerateClick} 
-                                            />} 
-                                        /> 
-                                        <EntryN 
-                                            prompts={this.prompts} 
+                                                Icon={props.total ? ClockIcon : currentValue ? DocumentDuplicateIcon : PencilIcon}
+                                                onClick={this.onGenerateClick}
+                                            />}
+                                        />
+                                        <EntryN
+                                            prompts={this.prompts}
                                             currentPrompt={this.currentPrompt}
                                         />
                                     </div>
 
 
 
-                                    {this.error && <div className="mt-4"><label 
+                                    {this.error && <div className="mt-4"><label
                                         className={`${this.error ? "text-red-400" : "text-gray-400"} font-medium transition-all`}>
                                             {this.error}
                                     </label></div>}
@@ -395,28 +395,28 @@ class Tool extends Component {
                                     </EntryPrompt>
                                 )}
 
-                               
+
                             </Col>
                             <Col span="6">
-                             <Output 
+                             <Output
                                     title={this.tool.output.title}
                                     desc={this.tool.output.desc}
 
                                     Icon={this.tool.output.Icon || this.tool.Icon}
                                     fromColor={this.tool.fromColor}
 									toColor={this.tool.toColor}
-                                    
+
                                     loading={this.loading}
                                     output={this.output}
 									outputs={this.outputs}
                                     code={this.code}
                                     language={this.language}
-                                    
+
                                     outputsColor={this.tool.output.color}
                                     OutputsIcon={this.tool.output.Icon}
-                            /> 
-                        </Col> 
-                    </Grid> 
+                            />
+                        </Col>
+                    </Grid>
                 </Body>
             </>
         )

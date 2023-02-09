@@ -1,10 +1,10 @@
 import {
 	ChevronRightIcon,
-} from '@heroicons/react/solid'
+} from '@heroicons/react/24/solid'
 
 import {
 	EyeIcon,
-} from '@heroicons/react/outline'
+} from '@heroicons/react/24/outline'
 
 
 
@@ -16,7 +16,7 @@ const obj = {
 	Icon: EyeIcon,
 	// tags: [],
 	permissions: ['user'],
-	
+
 	fromColor: "gray-800",
 	toColor: "gray-600",
 
@@ -35,11 +35,11 @@ const obj = {
 		desc: "Write details about your code below",
 		// n: 1,
 		prompts: [
-			{ 
-				title: "Language", 
-				attr: "language",  
-				value: "", 
-				placeholder: "JavaScript...", 
+			{
+				title: "Language",
+				attr: "language",
+				value: "",
+				placeholder: "JavaScript...",
 				label: "Which language are you using, will enable markup highlights",
 				type: "text",
 				maxLength: 40,
@@ -50,11 +50,11 @@ const obj = {
 				error: "",
 				example: `JavaScript`,
 			},
-			{ 
-				title: "Code Editor", 
-				attr: "content",  
-				value: "", 
-				placeholder: "function Name(attr){...", 
+			{
+				title: "Code Editor",
+				attr: "content",
+				value: "",
+				placeholder: "function Name(attr){...",
 				label: "Place some code above to understand how it works",
 				type: "code",
 				maxLength: 2000,
@@ -62,8 +62,8 @@ const obj = {
 				min: 3,
 				required: true,
 				error: "",
-				example: `function HelloWorld(text){ 
-	let text || "Hello World"; 
+				example: `function HelloWorld(text){
+	let text || "Hello World";
 	console.log(text);
 }`,
 			},
@@ -79,7 +79,7 @@ const obj = {
 			// color: "gray",
 		}
 	}]
-		
+
 }
 
 export default obj

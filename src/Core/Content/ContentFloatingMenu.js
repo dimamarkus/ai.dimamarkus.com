@@ -1,9 +1,9 @@
-  
+
 import React from 'react'
 import { FloatingMenu  } from '@tiptap/react'
 import {
   LightBulbIcon,
-} from '@heroicons/react/solid'
+} from '@heroicons/react/24/solid'
 import NumberIcon from './NumberIcon'
 import Loader from '../../Components/Loader'
 
@@ -21,27 +21,27 @@ const ContentFloatingMenu  = ({ editor }) => {
 	if (!editor) {
 		return null
 	  }
-    
+
   return (
-	 <FloatingMenu 
+	 <FloatingMenu
         tippyOptions={{maxWidth: 600,placement: "left" }}
-        editor={editor} 
+        editor={editor}
         className={`${store.editor.isCountdownActive ? "hidden" : ""}`}
       >
-           {store.editor.bubbleMenuLoading ? 
+           {store.editor.bubbleMenuLoading ?
               <div className="px-4 py-2 transition flex justify-center text-medium bg-gray-800 text-white">
                   <Loader active className="w-6 h-6 mr-4" /> {store.editor.bubbleMenuLoading}
-              </div> 
-        : 
+              </div>
+        :
         <>
-        {editor.state.selection.anchor === 1 ? 
+        {editor.state.selection.anchor === 1 ?
           <>
         <div className="border rounded-lg  bg-white  flex flex-col overflow-hidden  mb-1 divide-y text-gray-600 mr-2">
-                  
+
                   <button
                     onClick={store.editor.writeIntro}
-                    className={`flex 
-                    transition 
+                    className={`flex
+                    transition
                     font-medium
                 focus:bg-green-100
                 focus:text-green-800
@@ -55,8 +55,8 @@ const ContentFloatingMenu  = ({ editor }) => {
 
                   <button
                     onClick={store.editor.writeIntroOutline}
-                    className={`flex 
-                    transition 
+                    className={`flex
+                    transition
                     font-medium
                     focus:bg-gray-100
                     focus:text-gray-800
@@ -67,14 +67,14 @@ const ContentFloatingMenu  = ({ editor }) => {
                   >
                     <NumberIcon className="w-6 h-6 mr-2 text-gray-500" /> Write Outline
                   </button>
-                
+
                   </div>
                   </> :   <div className="border rounded-lg  bg-white  flex flex-col overflow-hidden  mb-1 divide-y text-gray-600 mr-2">
-                  
+
                   <button
                     onClick={store.editor.writeForMe}
-                    className={`flex 
-                    transition 
+                    className={`flex
+                    transition
                     font-medium
                 focus:bg-green-100
                 focus:text-green-800

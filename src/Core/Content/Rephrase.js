@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
 	RefreshIcon,
-} from '@heroicons/react/solid'
+} from '@heroicons/react/24/solid'
 
 import { observer, inject,  } from 'mobx-react'
 
@@ -33,11 +33,11 @@ class ContentBubbleMenuRephrase extends Component {
 		return (
 			<button
 				onClick={this.onClick}
-				className={`flex 
-				transition 
+				className={`flex
+				transition
 				font-medium
-				${enoughCharToWork ? 
-					'text-gray-600 hover:text-yellow-800 hover:bg-yellow-100' : 
+				${enoughCharToWork ?
+					'text-gray-600 hover:text-yellow-800 hover:bg-yellow-100' :
 					'bg-gray-100 text-gray-400 cursor-default'}
 				hover:shadow-md
 				hover:relative

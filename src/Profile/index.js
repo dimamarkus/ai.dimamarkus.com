@@ -3,8 +3,8 @@ import { Link, Switch, Route, } from 'react-router-dom'
 import { computed, observable, makeObservable } from 'mobx'
 import Header from '../Components/Header'
 import { IdentificationIcon,  CheckIcon,
-	ChatAltIcon, UsersIcon,UserCircleIcon, ReplyIcon, ChevronLeftIcon,
-} from '@heroicons/react/outline'
+	ChatBubbleLeftIcon, UsersIcon,UserCircleIcon, ArrowUturnLeftIcon, ChevronLeftIcon,
+} from '@heroicons/react/24/outline'
 import MainBody from '../Components/Body'
 import Referral from './Referral'
 import Feedback from './Feedback'
@@ -62,7 +62,7 @@ class Body extends Component {
 	@computed get currentPeriodEnd(){
 		// console.log(this.props.store.profile.current_period_end)
 		if(this.props.store.profile.current_period_end && this.props.store.profile.current_period_end.length > 0){
-			var days_difference = Math.round(((new Date(this.props.store.profile.current_period_end)).getTime() - (new Date()).getTime() ) / (1000 * 60 * 60 * 24));  
+			var days_difference = Math.round(((new Date(this.props.store.profile.current_period_end)).getTime() - (new Date()).getTime() ) / (1000 * 60 * 60 * 24));
 			if(days_difference < 0) {
 				return 0
 			}
@@ -97,7 +97,7 @@ class Body extends Component {
 	render() {
 	return (
 		<>
-			<Header 
+			<Header
 				title={this.props.store.profile.email}
 				desc={`${this.props.store.profile.fname} ${this.props.store.profile.lname}`}
 				category="Your Profile"
@@ -111,14 +111,14 @@ class Body extends Component {
 						<Helmet>
 							<title>{`My Profile - OpenAI Template`}</title>
 						</Helmet>
-						
+
 				</Route>
 
 				</Header>
 			<MainBody className="px-4 py-4 md:px-28 md:py-8 lg:py-12">
 
 				<Switch>
-					
+
 					<Route exact path="/my-profile/referral">
 						<Referral />
 					</Route>
@@ -127,28 +127,28 @@ class Body extends Component {
 					</Route>
 					<Route>
 
-						
-							
+
+
 						<Grid>
 
 
 
 
 							<Tool
-								Icon={ChatAltIcon}
-								title={"Feedback"} 
-								desc={"Provide comments on your experience"} 
+								Icon={ChatBubbleLeftIcon}
+								title={"Feedback"}
+								desc={"Provide comments on your experience"}
 								to={"/my-profile/feedback"}
 								fromColor="gray-400"
 								toColor="gray-400"
 							/>
 
-							
-							
-							<ToolDiv 
-								Icon={ReplyIcon}
-								title={"Log Out"} 
-								desc={"Sign out of your account"} 
+
+
+							<ToolDiv
+								Icon={ArrowUturnLeftIcon}
+								title={"Log Out"}
+								desc={"Sign out of your account"}
 								onClick={this.props.store.handleLogout}
 								fromColor="gray-400"
 								toColor="gray-400"
@@ -156,13 +156,13 @@ class Body extends Component {
 						</Grid>
 					</Route>
 				</Switch>
-			
-			
 
-			
-		
 
-			
+
+
+
+
+
 </MainBody>
 </>)
 }

@@ -1,6 +1,6 @@
 import {
-	ClipboardListIcon,
-} from '@heroicons/react/solid'
+	ClipboardIcon,
+} from '@heroicons/react/24/outline'
 
 
 const obj = {
@@ -8,13 +8,13 @@ const obj = {
 	title: "Job Ad",
 	desc: "Quickly create a job ad based on some basic details, like title, requirements, etc.",
 	category: "Business",
-	Icon: ClipboardListIcon,
+	Icon: ClipboardIcon,
 	// tags: [],
 	permissions: ['user'],
 
 	to: "/ai/business/jobad",
 	api: "/ai/business/jobad",
-	
+
 	fromColor: "blue-600",
 	toColor: "yellow-500",
 
@@ -30,11 +30,11 @@ const obj = {
 		desc: "Write a short few words about the ad",
 		// n: 1,
 		prompts: [
-			{ 
-				title: "Title", 
-				attr: "title",  
-				value: "", 
-				placeholder: "Junior Accountant", 
+			{
+				title: "Title",
+				attr: "title",
+				value: "",
+				placeholder: "Junior Accountant",
 				label: "Examples: Accountant, Developer, Dentist, Receptionist",
 				// type: "textarea",
 				maxLength: 40,
@@ -44,11 +44,11 @@ const obj = {
 				error: "",
 				example: "junior accountant",
 			},
-			{ 
-				title: "Salary", 
-				attr: "salary",  
-				value: "", 
-				placeholder: "$40,0000", 
+			{
+				title: "Salary",
+				attr: "salary",
+				value: "",
+				placeholder: "$40,0000",
 				label: "Examples: 40k, $20,000, $50 per hour",
 				// type: "textarea",
 				maxLength: 20,
@@ -58,11 +58,11 @@ const obj = {
 				error: "",
 				example: "40k",
 			},
-			{ 
-				title: "Skills or Experience", 
-				attr: "skills",  
-				value: "", 
-				placeholder: "Tax Audit, Reports, Designing Logos, etc", 
+			{
+				title: "Skills or Experience",
+				attr: "skills",
+				value: "",
+				placeholder: "Tax Audit, Reports, Designing Logos, etc",
 				label: "Examples: Microsoft CRM, Adobe, Till, Equipment",
 				// type: "textarea",
 				// maxLength: 600,
@@ -72,11 +72,11 @@ const obj = {
 				error: "",
 				example: "Tax Audit, Reports, MyOB",
 			},
-			{ 
-				title: "Company", 
-				attr: "company",  
-				value: "", 
-				placeholder: "Company Ptd Ltd", 
+			{
+				title: "Company",
+				attr: "company",
+				value: "",
+				placeholder: "Company Ptd Ltd",
 				label: "Examples: Tax Point Inc., Moshi Pty Ltd, Studium",
 				// type: "textarea",
 				maxLength: 40,
@@ -86,11 +86,11 @@ const obj = {
 				error: "",
 				example: "Smith and Co",
 			},
-			{ 
-				title: "Contact Information", 
-				attr: "contact",  
-				value: "", 
-				placeholder: "Adrian Smith adrian@smith.com", 
+			{
+				title: "Contact Information",
+				attr: "contact",
+				value: "",
+				placeholder: "Adrian Smith adrian@smith.com",
 				label: "Examples: Adrian, adrian@example.com, Call Adrian on 041021031",
 				// type: "textarea",
 				// maxLength: 600,
@@ -109,12 +109,12 @@ The Role:
 - Do bank reconciliations
 - Prepare reports and financial statements
 - Work with the CFO to ensure the company is compliant with the financial regulations
-			
+
 Skills and Experience:
 - Proven experience in an accounting role
 - Experience in MYOB would be an advantage
 - Experience in a retail environment would be an advantage
-			
+
 How to apply:
 If you are interested, you can apply by contacting us directly at Smith & Co or email john@smith.com.au.`,
 			// outputs: [],
@@ -126,11 +126,11 @@ If you are interested, you can apply by contacting us directly at Smith & Co or 
 		desc: "Write a short few words about the ad",
 		// n: 1,
 		prompts: [
-			{ 
-				title: "Job Information", 
-				attr: "content",  
-				value: "", 
-				placeholder: "accountant 40k can do report, audit, myob, Smith and Co, contact Ryan ryan@co.com", 
+			{
+				title: "Job Information",
+				attr: "content",
+				value: "",
+				placeholder: "accountant 40k can do report, audit, myob, Smith and Co, contact Ryan ryan@co.com",
 				label: "",
 				type: "textarea",
 				maxLength: 400,
@@ -149,12 +149,12 @@ The Role:
 - Do bank reconciliations
 - Prepare reports and financial statements
 - Work with the CFO to ensure the company is compliant with the financial regulations
-			
+
 Skills and Experience:
 - Proven experience in an accounting role
 - Experience in MYOB would be an advantage
 - Experience in a retail environment would be an advantage
-			
+
 How to apply:
 If you are interested, you can apply by contacting us directly at Smith & Co or email john@smith.com.au.`,
 			// outputs: [],
@@ -162,7 +162,7 @@ If you are interested, you can apply by contacting us directly at Smith & Co or 
 			// color: "",
 		}
 	}]
-		
+
 }
 
 export default obj

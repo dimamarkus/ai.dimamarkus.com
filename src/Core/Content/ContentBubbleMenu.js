@@ -1,11 +1,11 @@
-  
+
 import React from 'react'
 import { BubbleMenu } from '@tiptap/react'
 import {
 	RefreshIcon,
   PencilAltIcon,
   SortAscendingIcon
-} from '@heroicons/react/solid'
+} from '@heroicons/react/24/solid'
 
 import Loader from '../../Components/Loader'
 import Rephrase from './Rephrase'
@@ -31,13 +31,13 @@ const ContentBubbleMenu = ({ editor, store }) => {
 
   return (
 	  <>
-     
-            <BubbleMenu 
+
+            <BubbleMenu
               tippyOptions={{maxWidth: 600 }}
-              editor={editor} 
+              editor={editor}
               className={`select-none ${store.editor.isCountdownActive ? "hidden" : ""}`}
             >
-            
+
               <div className="border border-gray-300 rounded-lg  bg-white bg-opacity-60 backdrop-filter flex flex-col md:flex-row overflow-hidden backdrop-blur-md  divide-x text-gray-600 mb-1">
               {bubbleMenuLoading ? <div className="px-4 py-2 transition flex justify-center text-medium bg-gray-800 text-white">
                 <Loader active className="w-6 h-6 mr-4" /> {bubbleMenuLoading}
@@ -50,15 +50,15 @@ const ContentBubbleMenu = ({ editor, store }) => {
                 from={editor.state.selection.from}
                 to={editor.state.selection.to}
               />
-              <Shorten 
+              <Shorten
               from={editor.state.selection.from}
               to={editor.state.selection.to}
               />
               </>}
           </div>
-            
+
          </BubbleMenu>
-        
+
     </>
   )
 }

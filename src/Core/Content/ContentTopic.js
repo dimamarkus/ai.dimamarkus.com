@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import TextareaAutosize from 'react-textarea-autosize';
-import EntryInput from '../../Components/EntryInput' 
-import Button from '../../Components/Button' 
-import { CheckIcon,  } from '@heroicons/react/outline'
+import EntryInput from '../../Components/EntryInput'
+import Button from '../../Components/Button'
+import { CheckIcon,  } from '@heroicons/react/24/outline'
 import { observer, inject,  } from 'mobx-react'
 import { computed } from 'mobx'
 
@@ -28,17 +28,17 @@ class ContentTopic extends Component {
 
 	render() {
 
-		const { 
-			title, 
-			audience, 
-			desc, 
-			keywords, 
-			titleStatusColor, 
-			audienceStatusColor, 
-			descStatusColor, 
-			keywordsStatusColor, 
+		const {
+			title,
+			audience,
+			desc,
+			keywords,
+			titleStatusColor,
+			audienceStatusColor,
+			descStatusColor,
+			keywordsStatusColor,
 			isEditingDisabled } = this.props.store.editor
-		
+
 		return (
 			<div className={`bg-gray-150 border-b border-gray-200  overflow-hidden transition-all duration-500 ${this.props.store.editor.showInfo ? "max-h-0" : "max-h-full"}`}>
 				<div className="container mx-auto max-w-3xl py-8 pb-12">
@@ -49,10 +49,10 @@ class ContentTopic extends Component {
 					<div className=" relative z-10 rounded-tr-xl sm:rounded-t-xl lg:rounded-xl shadow-lg lg:-mr-8 sm:divide-y lg:divide-y-0 xl:divide-y divide-rose-100 flex flex-col mt-8">
 						<section className="flex flex-col sm:flex-row lg:flex-col xl:flex-row">
 							<div className="flex items-center w-full sm:w-48 lg:w-full xl:w-48 bg-gray-50 rounded-tr-xl sm:rounded-tr-none sm:rounded-tl-xl lg:rounded-tr-xl xl:rounded-tr-none text-lg leading-6 font-semibold text-rose-800 px-4 py-3 sm:p-8 lg:px-6 lg:py-4 xl:p-8">
-								
+
 								<div className={`flex-shrink-0 inline-flex items-center justify-center md:h-8 md:w-8 h-4 w-4 rounded-full bg-${titleStatusColor}-300 sm:mx-0 sm:h-8 sm:w-8 bg-${titleStatusColor}-300 `}>
-									
-									<CheckIcon 
+
+									<CheckIcon
 										className={`h-2 w-2 md:h-4 md:w-4
 										text-${titleStatusColor}-700
 									`} aria-hidden="true" />
@@ -71,8 +71,8 @@ class ContentTopic extends Component {
 						<section className="flex flex-col sm:flex-row lg:flex-col xl:flex-row">
 							<div className="flex items-center  w-full sm:w-48 lg:w-full xl:w-48 bg-gray-50  bg-rose-50  text-lg leading-6 font-semibold text-rose-800 px-4 py-3 sm:p-8 lg:px-6 lg:py-4 xl:p-8">
 								<div className={`flex-shrink-0 inline-flex items-center justify-center md:h-8 md:w-8 h-4 w-4 rounded-full bg-${audienceStatusColor}-300 sm:mx-0 sm:h-8 sm:w-8 bg-${audienceStatusColor}-300 `}>
-										
-										<CheckIcon 
+
+										<CheckIcon
 											className={`h-2 w-2 md:h-4 md:w-4
 											text-${audienceStatusColor}-700
 										`} aria-hidden="true" />
@@ -91,8 +91,8 @@ class ContentTopic extends Component {
 						<section className="flex flex-col sm:flex-row lg:flex-col xl:flex-row">
 							<div className="flex items-center  w-full sm:w-48 lg:w-full xl:w-48 bg-gray-50  bg-rose-50  text-lg leading-6 font-semibold text-rose-800 px-4 py-3 sm:p-8 lg:px-6 lg:py-4 xl:p-8">
 								<div className={`flex-shrink-0 inline-flex items-center justify-center md:h-8 md:w-8 h-4 w-4 rounded-full bg-${descStatusColor}-300 sm:mx-0 sm:h-8 sm:w-8 bg-${descStatusColor}-300 `}>
-										
-										<CheckIcon 
+
+										<CheckIcon
 											className={`h-2 w-2 md:h-4 md:w-4
 											text-${descStatusColor}-700
 										`} aria-hidden="true" />
@@ -111,8 +111,8 @@ class ContentTopic extends Component {
 						<section className="flex flex-col sm:flex-row lg:flex-col xl:flex-row">
 							<div className="flex items-center  w-full sm:w-48 lg:w-full xl:w-48 bg-gray-50  bg-rose-50  text-lg leading-6 font-semibold text-rose-800 px-4 py-3 sm:p-8 lg:px-6 lg:py-4 xl:p-8">
 								<div className={`flex-shrink-0 inline-flex items-center justify-center md:h-8 md:w-8 h-4 w-4 rounded-full bg-${keywordsStatusColor}-300 sm:mx-0 sm:h-8 sm:w-8 bg-${keywordsStatusColor}-300 `}>
-										
-										<CheckIcon 
+
+										<CheckIcon
 											className={`h-2 w-2 md:h-4 md:w-4
 											text-${keywordsStatusColor}-700
 										`} aria-hidden="true" />
@@ -131,10 +131,10 @@ class ContentTopic extends Component {
 					</div>
 
 					<Button disabled={isEditingDisabled} onClick={this.onClick}>Start Editing Document</Button>
-					
+
 				</div>
 			</div>
-			
+
 		)
 	}
 }

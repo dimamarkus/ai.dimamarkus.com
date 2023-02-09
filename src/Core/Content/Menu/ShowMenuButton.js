@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import {
 	SortAscendingIcon,
-} from '@heroicons/react/solid'
+} from '@heroicons/react/24/solid'
 
 import { observer, inject,  } from 'mobx-react'
 import {
 	LightBulbIcon,
 	ChevronUpIcon
-  } from '@heroicons/react/solid'
+  } from '@heroicons/react/24/solid'
 
   import ToolTip from '../../../Components/ToolTip'
 

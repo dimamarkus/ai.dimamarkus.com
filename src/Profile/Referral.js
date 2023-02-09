@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react'
-import { DatabaseIcon, LinkIcon, ArrowDownIcon, UsersIcon } from '@heroicons/react/outline'
+import { CircleStackIcon, LinkIcon, ArrowDownIcon, UsersIcon } from '@heroicons/react/24/outline'
 import TwitterIcon from '../media/twitter'
 import FacebookIcon from '../media/facebook'
 
@@ -21,7 +21,7 @@ class Referral extends Component {
 
 			 	 <div className="flex items-center">
 					<div className={`flex-shrink-0 inline-flex items-center justify-center md:h-12 md:w-12 h-6 w-6 rounded-full bg-yellow-200 sm:mx-0 sm:h-10 sm:w-10`}>
-						<DatabaseIcon className={`h-3 w-3 md:h-6 md:w-6 text-yellow-700 `} aria-hidden="true" />
+						<CircleStackIcon className={`h-3 w-3 md:h-6 md:w-6 text-yellow-700 `} aria-hidden="true" />
 					</div>
               	  <div className=" mt-0 ml-4 text-left">
                     <div as="h3" className="text-lg leading-6 font-medium text-gray-900">
@@ -38,7 +38,7 @@ class Referral extends Component {
 						<ArrowDownIcon className={`h-3 w-3 md:h-6 md:w-6 text-gray-400 `} aria-hidden="true" />
 					</div>
                   </div>
-				  
+
                 <div className="flex items-center">
 					<div className={`flex-shrink-0 inline-flex items-center justify-center md:h-12 md:w-12 h-6 w-6 rounded-full bg-green-200 sm:mx-0 sm:h-10 sm:w-10`}>
 						<UsersIcon className={`h-3 w-3 md:h-6 md:w-6 text-green-700 `} aria-hidden="true" />
@@ -55,7 +55,7 @@ class Referral extends Component {
 
 				  <div className="flex mt-4 mb-4">
 				 		<div className="mt-1 flex rounded-md flex-1">
-                       
+
                         <input
                           id="referral"
                           type="text"
@@ -64,15 +64,15 @@ class Referral extends Component {
                           placeholder="www.example.com"
 						  onChange={()=>{}}
 						  onClick={()=>{
-							document.getElementById("referral").select();  
+							document.getElementById("referral").select();
 							  this.props.store.copyToClipboard(`${window.store.landingPageUrl}/signup?referral=${this.props.store.profile.referralId}`
 							)}}
                         />
                       </div>
 
-					  
 
-					{/* <input 
+
+					{/* <input
 						type="url"
 						value={`https://app.subwriter.ai/signup?ref=123123`}
 						className="focus:outline-none text-lg bg-white rounded-md px-4 py-2 border border-gray-300 font-regular flex-1" /> */}
@@ -98,18 +98,18 @@ class Referral extends Component {
 							</div>
 					</a>
 				</div>
-				
+
 
 				</div>
 
                 </div>
-			
+
 			</>
 		)
 	}
 }
 
-  
+
 
 
 export default Referral

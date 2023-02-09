@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {
 	PencilAltIcon,
-} from '@heroicons/react/solid'
+} from '@heroicons/react/24/solid'
 
 import { observer, inject,  } from 'mobx-react'
 
@@ -26,18 +26,18 @@ class ContentBubbleMenuGrammar extends Component {
 		if(charactersSelected < 20){
 			return null
 		}
-		
+
 		if(charactersSelected > 900){
 			return null
 		}
 		return (
 			<button
 				onClick={this.onClick}
-				className={`flex 
-				transition 
+				className={`flex
+				transition
 				font-medium
-				${enoughCharToWork ? 
-					'text-gray-600 hover:text-green-800 hover:bg-green-100' : 
+				${enoughCharToWork ?
+					'text-gray-600 hover:text-green-800 hover:bg-green-100' :
 					'bg-gray-100 text-gray-400 cursor-default'}
 				hover:shadow-md
 				hover:relative
